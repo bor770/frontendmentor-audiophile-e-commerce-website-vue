@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audiophile e-commerce website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles/base/shared.base.css" rel="stylesheet" />
+    <link href="styles/base/index.base.css" rel="stylesheet" />
+    <link href="styles/mobile/shared.mobile.css" rel="stylesheet" />
+    <link href="styles/mobile/index.mobile.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="scripts/index.js"></script>
+  </head>
+  <body id="body">
+    <div id="top-product">
+      <header>
+        <button>
+          <img
+            alt="Burger Icon"
+            src="assets/shared/tablet/icon-hamburger.svg"
+          />
+        </button>
+        <img alt="Logo" src="assets/shared/desktop/logo.svg" />
+        <nav>
+          <ul class="categories-nav">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li v-for="category in categories">
+              <a href="">{{ category }}</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="" id="cart-link">
+          <img alt="Cart" src="assets/shared/desktop/icon-cart.svg" />
+        </a>
+      </header>
+      <article>
+        <h2>NEW PRODUCT</h2>
+        <h3>XX99 Mark II Headphones</h3>
+        <p>
+          Experience natural, lifelike audio and exceptional build quality made
+          for the passionate music enthusiast.
+        </p>
+        <a class="btn btn-1" href="">See Product</a>
+      </article>
+    </div>
+    <main>
+      <section>
+        <nav>
+          <ul>
+            <li v-for="category in categories">
+              <img
+                alt="Category Thumbnail"
+                class="category-thumbnail"
+                v-bind:src="`assets/shared/desktop/image-category-thumbnail-${category}.png`"
+              />
+              <span class="category">{{ category }}</span>
+              <a href="">
+                <span>Shop</span>
+                <img
+                  alt="Right Arrow"
+                  src="assets/shared/desktop/icon-arrow-right.svg"
+                />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section id="example-products">
+        <article id="zx9">
+          <picture>
+            <source
+              media="(min-width: 90rem)"
+              srcset="assets/home/desktop/image-speaker-zx9.png"
+            />
+            <source
+              media="(min-width: 48rem)"
+              srcset="assets/home/tablet/image-speaker-zx9.png"
+            />
+            <img
+              alt="ZX9 SPEAKER"
+              src="assets/home/mobile/image-speaker-zx9.png"
+            />
+          </picture>
+          <div class="product-text">
+            <h2>
+              ZX9
+              <br />
+              SPEAKER
+            </h2>
+            <p>
+              Upgrade to premium speakers that are phenomenally built to deliver
+              truly remarkable sound.
+            </p>
+            <a class="btn btn-2" href="">See Product</a>
+          </div>
+        </article>
+        <article id="zx7">
+          <h2>ZX7 SPEAKER</h2>
+          <a class="btn btn-3" href="">See Product</a>
+        </article>
+        <article id="yx1">
+          <picture>
+            <source
+              media="(min-width: 90rem)"
+              srcset="assets/home/desktop/image-earphones-yx1.jpg"
+            />
+            <source
+              media="(min-width: 48rem)"
+              srcset="assets/home/tablet/image-earphones-yx1.jpg"
+            />
+            <img
+              alt="YX1 EARPHONES"
+              src="assets/home/mobile/image-earphones-yx1.jpg"
+            />
+          </picture>
+          <div class="product-text">
+            <h2>YX1 EARPHONES</h2>
+            <a class="btn btn-3" href="">See Product</a>
+          </div>
+        </article>
+      </section>
+      <section id="best">
+        <article>
+          <div id="best-gear">
+            <h2>
+              Bringing you the
+              <span id="best-word">best</span>
+              audio gear
+            </h2>
+            <p>
+              Located at the heart of New York City, Audiophile is the premier
+              store for high end headphones, earphones, speakers, and audio
+              accessories. We have a large showroom and luxury demonstration
+              rooms available for you to browse and experience a wide range of
+              our products. Stop by our store to meet some of the fantastic
+              people who make Audiophile the best place to buy your portable
+              audio equipment.
+            </p>
+          </div>
+          <picture>
+            <source
+              media="(min-width: 90rem)"
+              srcset="assets/shared/desktop/image-best-gear.jpg"
+            />
+            <source
+              media="(min-width: 48rem)"
+              srcset="assets/shared/tablet/image-best-gear.jpg"
+            />
+            <img
+              alt="Best Gear"
+              src="assets/shared/mobile/image-best-gear.jpg"
+            />
+          </picture>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <img alt="Logo" id="footer-logo" src="assets/shared/desktop/logo.svg" />
+      <nav>
+        <ul class="categories-nav">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li v-for="category in categories">
+            <a href="">{{ category }}</a>
+          </li>
+        </ul>
+      </nav>
+      <div>
+        <p>
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 7 days a week.
+        </p>
+        <p>Copyright 2021. All Rights Reserved</p>
+      </div>
+      <ul>
+        <li>
+          <a>
+            <img alt="Facebook" src="assets/shared/desktop/icon-facebook.svg" />
+          </a>
+        </li>
+        <li>
+          <a>
+            <img alt="Twitter" src="assets/shared/desktop/icon-twitter.svg" />
+          </a>
+        </li>
+        <li>
+          <a>
+            <img
+              alt="Instagram"
+              src="assets/shared/desktop/icon-instagram.svg"
+            />
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

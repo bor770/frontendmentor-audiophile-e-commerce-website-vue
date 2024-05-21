@@ -1,0 +1,68 @@
+#top-product {
+  color: #fff;
+  padding-top: 2rem;
+}
+
+header {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+#top-product h2 {
+  font-size: 0.87rem;
+  font-weight: 400;
+  letter-spacing: 0.62rem;
+  opacity: 0.5;
+}
+
+#top-product h3 {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+#top-product p {
+  font-size: 0.94rem;
+  line-height: 166.67%;
+  opacity: 0.75;
+}
+
+#example-products {
+  display: flex;
+  flex-direction: column;
+}
+
+#zx9 {
+  background-color: #d87d4a;
+  background-image: url(/assets/home/desktop/pattern-circles.svg);
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  color: #fff;
+}
+
+#zx9 p {
+  font-size: 0.94rem;
+  line-height: 166.67%;
+}
+
+#zx7 {
+  background-size: contain;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-block: 6.31rem;
+}
+
+#zx7 h2,
+#yx1 h2 {
+  font-size: 1.75rem;
+  letter-spacing: 0.12rem;
+  margin-bottom: 2rem;
+}
+
+#yx1 img {
+  border-radius: 8px;
+}
+
+#yx1 .product-text {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+}
