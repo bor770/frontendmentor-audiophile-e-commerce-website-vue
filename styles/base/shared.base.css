@@ -23,6 +23,7 @@ header {
 }
 
 a {
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -84,6 +85,11 @@ main li a {
   letter-spacing: 0.06rem;
 }
 
+.shop {
+  color: #000;
+  opacity: 0.5;
+}
+
 img {
   display: block;
 }
@@ -127,4 +133,21 @@ footer::before {
   display: block;
   height: 0.25rem;
   width: 6.31rem;
+}
+
+#footer-text {
+  font-size: 0.94rem;
+  line-height: 166.67%;
+  opacity: 0.5;
+}
+
+#copyright {
+  font-weight: 700;
+}
+
+#social {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 6.5rem;
 }
