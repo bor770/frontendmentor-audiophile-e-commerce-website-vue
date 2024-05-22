@@ -22,6 +22,10 @@ header {
   text-transform: uppercase;
 }
 
+.categories-nav a:hover {
+  color: #d87d4a;
+}
+
 a {
   cursor: pointer;
   text-decoration: none;
@@ -31,9 +35,16 @@ a {
   color: #fff;
 }
 
-button,
-#cart-link {
+button {
   display: contents;
+}
+
+svg {
+  display: block;
+}
+
+.inline-svg:hover path {
+  fill: #d87d4a;
 }
 
 .btn {
@@ -53,6 +64,10 @@ button,
   color: #fff;
 }
 
+.btn-1:hover {
+  background-color: #fba485;
+}
+
 ul {
   list-style: none;
 }
@@ -64,9 +79,12 @@ main ul {
 }
 
 main li {
-  align-items: center;
   background-color: #f1f1f1;
   border-radius: 8px;
+}
+
+.category-in-nav {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -77,7 +95,7 @@ main li {
   position: absolute;
 }
 
-main li a {
+.shop-link {
   align-items: center;
   display: flex;
   font-size: 0.81rem;
@@ -90,6 +108,10 @@ main li a {
   opacity: 0.5;
 }
 
+.category-in-nav:hover .shop {
+  color: #d87d4a;
+}
+
 img {
   display: block;
 }
@@ -99,9 +121,18 @@ img {
   color: #fff;
 }
 
+.btn-2:hover {
+  background-color: #4c4c4c;
+}
+
 .btn-3 {
   border: #000 solid 1px;
   color: #000;
+}
+
+.btn-3:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 #best article {

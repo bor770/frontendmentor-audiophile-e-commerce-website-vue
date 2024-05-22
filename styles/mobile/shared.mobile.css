@@ -8,7 +8,7 @@ main ul {
   margin-bottom: 7.5rem;
 }
 
-main li {
+.category-in-nav {
   height: 10.31rem;
   padding-block: 5.5rem 1.38rem;
 }

@@ -37,9 +37,7 @@
             </li>
           </ul>
         </nav>
-        <a href="" id="cart-link">
-          <img alt="Cart" src="assets/shared/desktop/icon-cart.svg" />
-        </a>
+        <a href="" class="inline-svg" id="cart-link" v-html="svgIcons.cart"></a>
       </header>
       <article>
         <h2>NEW PRODUCT</h2>
@@ -56,19 +54,19 @@
         <nav>
           <ul>
             <li v-for="category in categories">
-              <img
-                alt="Category Thumbnail"
-                class="category-thumbnail"
-                v-bind:src="`assets/shared/desktop/image-category-thumbnail-${category}.png`"
-              />
-              <span class="category">{{ category }}</span>
-              <a href="">
-                <span class="shop">Shop</span>
+              <a class="category-in-nav" href="">
                 <img
-                  alt="Right Arrow"
-                  src="assets/shared/desktop/icon-arrow-right.svg"
-                />
-              </a>
+                  alt="Category Thumbnail"
+                  class="category-thumbnail"
+                  v-bind:src="`assets/shared/desktop/image-category-thumbnail-${category}.png`" />
+                <span class="category">{{ category }}</span>
+                <div class="shop-link">
+                  <span class="shop">Shop</span>
+                  <img
+                    alt="Right Arrow"
+                    src="assets/shared/desktop/icon-arrow-right.svg"
+                  /></div
+              ></a>
             </li>
           </ul>
         </nav>
@@ -179,28 +177,19 @@
           Audiophile is an all in one stop to fulfill your audio needs. We're a
           small team of music lovers and sound specialists who are devoted to
           helping you get the most out of personal audio. Come and visit our
-          demo facility - we’re open 7 days a week.
+          demo facility - we’re open 6 days a week.
         </p>
         <p id="copyright">Copyright 2021. All Rights Reserved</p>
       </div>
       <ul id="social">
         <li>
-          <a>
-            <img alt="Facebook" src="assets/shared/desktop/icon-facebook.svg" />
-          </a>
+          <a class="inline-svg" v-html="svgIcons.facebook"></a>
         </li>
         <li>
-          <a>
-            <img alt="Twitter" src="assets/shared/desktop/icon-twitter.svg" />
-          </a>
+          <a class="inline-svg" v-html="svgIcons.twitter"></a>
         </li>
         <li>
-          <a>
-            <img
-              alt="Instagram"
-              src="assets/shared/desktop/icon-instagram.svg"
-            />
-          </a>
+          <a class="inline-svg" v-html="svgIcons.instagram"></a>
         </li>
       </ul>
     </footer>
