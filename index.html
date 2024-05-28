@@ -34,7 +34,7 @@
               <a href="/index.html">Home</a>
             </li>
             <li v-for="category in categories">
-              <a href="">{{ category }}</a>
+              <a v-bind:href="categoryPageLink(category)">{{ category }}</a>
             </li>
           </ul>
         </nav>
@@ -55,7 +55,10 @@
         <nav>
           <ul>
             <li v-for="category in categories">
-              <a class="category-in-nav" href="">
+              <a
+                class="category-in-nav"
+                v-bind:href="categoryPageLink(category)"
+              >
                 <img
                   alt="Category Thumbnail"
                   class="category-thumbnail"
@@ -169,7 +172,7 @@
             <a href="/index.html">Home</a>
           </li>
           <li v-for="category in categories">
-            <a href="">{{ category }}</a>
+            <a v-bind:href="categoryPageLink(category)">{{ category }}</a>
           </li>
         </ul>
       </nav>

@@ -39,7 +39,51 @@
         </nav>
         <a href="" class="inline-svg" id="cart-link" v-html="svgIcons.cart"></a>
       </header>
-      <h1>{{ selectedCategory() }}</h1>
+      <h1>{{ selectedCategory }}</h1>
     </div>
+    <section>
+      <ul>
+        <li v-for="product in selectedProducts">
+          <picture>
+            <source
+              media="(min-width: 90rem)"
+              v-bind:srcset="product.categoryImage.desktop"
+            />
+            <source
+              media="(min-width: 48rem)"
+              v-bind:srcset="product.categoryImage.tablet"
+            />
+            <img alt="Product" v-bind:src="product.categoryImage.mobile" />
+          </picture>
+          <div>
+            <p v-if="product.new">NEW PRODUCT</p>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <a class="btn btn-1" href="">See Product</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <nav>
+        <ul>
+          <li v-for="category in categories">
+            <a class="category-in-nav" v-bind:href="categoryPageLink(category)">
+              <img
+                alt="Category Thumbnail"
+                class="category-thumbnail"
+                v-bind:src="categoryThumbnailImage(category)" />
+              <span class="category">{{ category }}</span>
+              <div class="shop-link">
+                <span class="shop">Shop</span>
+                <img
+                  alt="Right Arrow"
+                  src="/assets/shared/desktop/icon-arrow-right.svg"
+                /></div
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </section>
   </body>
 </html>
