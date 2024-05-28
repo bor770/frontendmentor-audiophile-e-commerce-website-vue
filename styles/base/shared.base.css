@@ -85,6 +85,7 @@ main li {
 
 .category-in-nav {
   align-items: center;
+  color: #000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -1,28 +1,18 @@
 const IndexApp = {
   async created() {
-    const data = await (await fetch(`assets/data/data.json`)).json();
+    const { categories, svgIcons } = await init();
 
-    this.productData = data;
-
-    this.categories = this.orderOfCategories.map(
-      (index) => [...new Set(data.map((product) => product.category))][index]
-    );
-
-    for (const iconName of this.svgIconNames) {
-      this.svgIcons[iconName] = await (
-        await fetch(`assets/shared/desktop/icon-${iconName}.svg`)
-      ).text();
-    }
+    this.categories = categories;
+    this.svgIcons = svgIcons;
   },
   data() {
-    return {
-      categories: [],
-      orderOfCategories: [1, 2, 0],
-      productData: {},
-      svgIconNames: [`cart`, `facebook`, `instagram`, `twitter`],
-      svgIcons: {},
-    };
+    return { categories: [], svgIcons: {} };
+  },
+  methods: {
+    categoryThumbnailImage(category) {
+      return `/assets/shared/desktop/image-category-thumbnail-${category}.png`;
+    },
   },
 };
 
-Vue.createApp(IndexApp).mount(`#body`);
+Vue.createApp(IndexApp).mount(`body`);

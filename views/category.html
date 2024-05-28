@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audiophile e-commerce website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/styles/base/shared.base.css" rel="stylesheet" />
+    <link href="/styles/mobile/shared.mobile.css" rel="stylesheet" />
+    <base href=".." />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="/scripts/util.js"></script>
+    <script defer src="/scripts/category.js"></script>
+  </head>
+  <body>
+    <div id="title">
+      <header>
+        <button>
+          <img
+            alt="Burger Icon"
+            src="assets/shared/tablet/icon-hamburger.svg"
+          />
+        </button>
+        <img alt="Logo" src="assets/shared/desktop/logo.svg" />
+        <nav>
+          <ul class="categories-nav">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li v-for="category in categories">
+              <a href="">{{ category }}</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="" class="inline-svg" id="cart-link" v-html="svgIcons.cart"></a>
+      </header>
+      <h1>{{ selectedCategory() }}</h1>
+    </div>
+  </body>
+</html>
