@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+}
+
+#top {
+  margin-bottom: 4rem;
+}
+
+header {
+  border-bottom-color: #ffffff1b;
+}
+
+h1 {
+  font-size: 1.75rem;
+  letter-spacing: 0.12rem;
+  padding-block: 2rem;
+}
+
+.product-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

@@ -10,15 +10,19 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
-    <link href="/styles/base/shared.base.css" rel="stylesheet" />
-    <link href="/styles/mobile/shared.mobile.css" rel="stylesheet" />
     <base href=".." />
+    <link href="/styles/base/shared.base.css" rel="stylesheet" />
+    <link href="/styles/base/details.base.css" rel="stylesheet" />
+    <link href="/styles/base/category.base.css" rel="stylesheet" />
+    <link href="/styles/mobile/shared.mobile.css" rel="stylesheet" />
+    <link href="/styles/mobile/details.mobile.css" rel="stylesheet" />
+    <link href="/styles/mobile/category.mobile.css" rel="stylesheet" />
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="/scripts/util.js"></script>
     <script defer src="/scripts/category.js"></script>
   </head>
   <body>
-    <div id="title">
+    <div id="top">
       <header>
         <button>
           <img
@@ -45,29 +49,35 @@
       <section>
         <ul>
           <li v-for="product in selectedProducts">
-            <picture>
-              <source
-                media="(min-width: 90rem)"
-                v-bind:srcset="product.categoryImage.desktop"
-              />
-              <source
-                media="(min-width: 48rem)"
-                v-bind:srcset="product.categoryImage.tablet"
-              />
-              <img alt="Product" v-bind:src="product.categoryImage.mobile" />
-            </picture>
-            <div>
-              <p v-if="product.new">NEW PRODUCT</p>
-              <h2>{{ product.name }}</h2>
-              <p>{{ product.description }}</p>
-              <a class="btn btn-1" href="">See Product</a>
+            <div class="single-product">
+              <picture>
+                <source
+                  media="(min-width: 90rem)"
+                  v-bind:srcset="product.categoryImage.desktop"
+                />
+                <source
+                  media="(min-width: 48rem)"
+                  v-bind:srcset="product.categoryImage.tablet"
+                />
+                <img
+                  alt="Product"
+                  class="product-image"
+                  v-bind:src="product.categoryImage.mobile"
+                />
+              </picture>
+              <div class="product-info">
+                <p id="new-product" v-if="product.new">NEW PRODUCT</p>
+                <h2 class="product-name">{{ product.name }}</h2>
+                <p class="product-description">{{ product.description }}</p>
+                <a class="btn btn-1" href="">See Product</a>
+              </div>
             </div>
           </li>
         </ul>
       </section>
       <section>
         <nav>
-          <ul>
+          <ul id="categories-thumbnails-nav">
             <li v-for="category in categories">
               <a
                 class="category-in-nav"

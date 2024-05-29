@@ -1,0 +1,10 @@
+.single-product {
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.product-name {
+  font-size: 1.75rem;
+  letter-spacing: 0.06rem;
+}
+

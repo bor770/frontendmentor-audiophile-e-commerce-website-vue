@@ -1,0 +1,21 @@
+#top {
+  background-color: #000;
+}
+
+.single-product {
+  display: flex;
+}
+
+.product-image {
+  border-radius: 8px;
+}
+
+#new-product {
+  color: #d87d4a;
+  font-size: 0.87rem;
+  letter-spacing: 0.62rem;
+}
+
+.product-name {
+  text-transform: uppercase;
+}

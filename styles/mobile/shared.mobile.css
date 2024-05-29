@@ -1,8 +1,21 @@
+#top {
+  text-align: center;
+}
+
+header {
+  justify-content: space-between;
+  padding: 0 1.5rem 2rem;
+}
+
+#top nav {
+  display: none;
+}
+
 main {
   padding: 0 1.5rem 7.5rem;
 }
 
-main ul {
+#categories-thumbnails-nav {
   flex-direction: column;
   gap: 4.25rem;
   margin-bottom: 7.5rem;

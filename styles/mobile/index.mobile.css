@@ -1,37 +1,30 @@
-#top-product {
+#top {
   background-color: #191919;
   margin-bottom: 5.75rem;
-  text-align: center;
 }
 
 header {
   border-bottom-color: #ffffff1b;
-  justify-content: space-between;
-  padding: 0 1.5rem 2rem;
 }
 
-#top-product nav {
-  display: none;
-}
-
-#top-product article {
+#top article {
   background-image: url(/assets/home/mobile/image-header.jpg);
   background-position: bottom;
   background-size: cover;
   padding: 6.75rem 1.5rem 7rem 1.44rem;
 }
 
-#top-product h2 {
+#top h2 {
   margin-bottom: 1rem;
 }
 
-#top-product h3 {
+#top h3 {
   font-size: 2.25rem;
   line-height: 111.11%;
   letter-spacing: 0.08rem;
 }
 
-#top-product p {
+#top p {
   margin-bottom: 1.75rem;
 }
 

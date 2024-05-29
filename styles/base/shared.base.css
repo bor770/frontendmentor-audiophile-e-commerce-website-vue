@@ -8,6 +8,11 @@ html {
   font-family: "Manrope", sans-serif;
 }
 
+#top {
+  color: #fff;
+  padding-top: 2rem;
+}
+
 header {
   align-items: center;
   display: flex;
@@ -72,13 +77,13 @@ ul {
   list-style: none;
 }
 
-main ul {
+#categories-thumbnails-nav {
   display: flex;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-main li {
+#categories-thumbnails-nav li {
   background-color: #f1f1f1;
   border-radius: 8px;
 }
@@ -115,6 +120,7 @@ main li {
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 .btn-2 {
