@@ -41,49 +41,123 @@
       </header>
       <h1>{{ selectedCategory }}</h1>
     </div>
-    <section>
-      <ul>
-        <li v-for="product in selectedProducts">
+    <main>
+      <section>
+        <ul>
+          <li v-for="product in selectedProducts">
+            <picture>
+              <source
+                media="(min-width: 90rem)"
+                v-bind:srcset="product.categoryImage.desktop"
+              />
+              <source
+                media="(min-width: 48rem)"
+                v-bind:srcset="product.categoryImage.tablet"
+              />
+              <img alt="Product" v-bind:src="product.categoryImage.mobile" />
+            </picture>
+            <div>
+              <p v-if="product.new">NEW PRODUCT</p>
+              <h2>{{ product.name }}</h2>
+              <p>{{ product.description }}</p>
+              <a class="btn btn-1" href="">See Product</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <nav>
+          <ul>
+            <li v-for="category in categories">
+              <a
+                class="category-in-nav"
+                v-bind:href="categoryPageLink(category)"
+              >
+                <img
+                  alt="Category Thumbnail"
+                  class="category-thumbnail"
+                  v-bind:src="categoryThumbnailImage(category)"
+                />
+                <span class="category">{{ category }}</span>
+                <div class="shop-link">
+                  <span class="shop">Shop</span>
+                  <img
+                    alt="Right Arrow"
+                    src="/assets/shared/desktop/icon-arrow-right.svg"
+                  />
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section id="best">
+        <article>
+          <div id="best-gear">
+            <h2>
+              Bringing you the
+              <span id="best-word">best</span>
+              audio gear
+            </h2>
+            <p>
+              Located at the heart of New York City, Audiophile is the premier
+              store for high end headphones, earphones, speakers, and audio
+              accessories. We have a large showroom and luxury demonstration
+              rooms available for you to browse and experience a wide range of
+              our products. Stop by our store to meet some of the fantastic
+              people who make Audiophile the best place to buy your portable
+              audio equipment.
+            </p>
+          </div>
           <picture>
             <source
               media="(min-width: 90rem)"
-              v-bind:srcset="product.categoryImage.desktop"
+              srcset="/assets/shared/desktop/image-best-gear.jpg"
             />
             <source
               media="(min-width: 48rem)"
-              v-bind:srcset="product.categoryImage.tablet"
+              srcset="/assets/shared/tablet/image-best-gear.jpg"
             />
-            <img alt="Product" v-bind:src="product.categoryImage.mobile" />
+            <img
+              alt="Best Gear"
+              src="/assets/shared/mobile/image-best-gear.jpg"
+            />
           </picture>
-          <div>
-            <p v-if="product.new">NEW PRODUCT</p>
-            <h2>{{ product.name }}</h2>
-            <p>{{ product.description }}</p>
-            <a class="btn btn-1" href="">See Product</a>
-          </div>
-        </li>
-      </ul>
-    </section>
-    <section>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <img alt="Logo" id="footer-logo" src="assets/shared/desktop/logo.svg" />
       <nav>
-        <ul>
+        <ul class="categories-nav">
+          <li>
+            <a href="/index.html">Home</a>
+          </li>
           <li v-for="category in categories">
-            <a class="category-in-nav" v-bind:href="categoryPageLink(category)">
-              <img
-                alt="Category Thumbnail"
-                class="category-thumbnail"
-                v-bind:src="categoryThumbnailImage(category)" />
-              <span class="category">{{ category }}</span>
-              <div class="shop-link">
-                <span class="shop">Shop</span>
-                <img
-                  alt="Right Arrow"
-                  src="/assets/shared/desktop/icon-arrow-right.svg"
-                /></div
-            ></a>
+            <a v-bind:href="categoryPageLink(category)">{{ category }}</a>
           </li>
         </ul>
       </nav>
-    </section>
+      <div id="footer-text">
+        <p id="we-are-open">
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 6 days a week.
+        </p>
+        <p id="copyright">Copyright 2021. All Rights Reserved</p>
+      </div>
+      <ul id="social">
+        <li>
+          <a class="inline-svg" v-html="svgIcons.facebook"></a>
+        </li>
+        <li>
+          <a class="inline-svg" v-html="svgIcons.twitter"></a>
+        </li>
+        <li>
+          <a class="inline-svg" v-html="svgIcons.instagram"></a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
