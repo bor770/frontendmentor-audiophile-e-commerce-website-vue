@@ -19,3 +19,9 @@
 .product-name {
   text-transform: uppercase;
 }
+
+.product-description {
+  font-size: 0.94rem;
+  line-height: 166.67%;
+  opacity: 0.5;
+}

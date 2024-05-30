@@ -16,9 +16,16 @@ h1 {
   padding-block: 2rem;
 }
 
+#products-in-category {
+  gap: 7.5rem;
+  margin-bottom: 10.75rem;
+}
+
 .product-info {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
+
+

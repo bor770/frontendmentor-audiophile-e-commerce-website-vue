@@ -6,3 +6,8 @@ header {
 h1 {
   text-transform: uppercase;
 }
+
+#products-in-category {
+  display: flex;
+  flex-direction: column;
+}
