@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audiophile e-commerce website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <base href=".." />
+    <link href="/styles/base/shared.base.css" rel="stylesheet" />
+    <link href="/styles/base/details.base.css" rel="stylesheet" />
+    <link href="/styles/base/product.base.css" rel="stylesheet" />
+    <link href="/styles/mobile/shared.mobile.css" rel="stylesheet" />
+    <link href="/styles/mobile/details.mobile.css" rel="stylesheet" />
+    <link href="/styles/mobile/product.mobile.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="/scripts/util.js"></script>
+    <script defer src="/scripts/product.js"></script>
+  </head>
+  <body>
+    <div id="top">
+      <header>
+        <button id="burger-icon-button">
+          <img
+            alt="Burger Icon"
+            src="assets/shared/tablet/icon-hamburger.svg"
+          />
+        </button>
+        <img alt="Logo" src="assets/shared/desktop/logo.svg" />
+        <nav>
+          <ul class="categories-nav">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li v-for="category in categories">
+              <a href="">{{ category }}</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="" class="inline-svg" id="cart-link" v-html="svgIcons.cart"></a>
+      </header>
+    </div>
+    <main>
+      <a href="/index.html" id="go-back">Go Back</a>
+      <div id="row-1">
+        <section id="main-product-image">
+          <picture>
+            <source
+              media="(min-width: 90rem)"
+              v-bind:srcset="selectedProduct.image?.desktop"
+            />
+            <source
+              media="(min-width: 48rem)"
+              v-bind:srcset="selectedProduct.image?.tablet"
+            />
+            <img
+              alt="Product"
+              class="product-image"
+              v-bind:src="selectedProduct.image?.mobile"
+            />
+          </picture>
+        </section>
+        <section id="product-details">
+          <p id="new-product" v-if="selectedProduct.new">NEW PRODUCT</p>
+          <h1 class="product-name">{{ selectedProduct.name }}</h1>
+          <p class="product-description">{{ selectedProduct.description }}</p>
+          <p id="price">$ {{ price }}</p>
+          <div id="cart-management">
+            <div id="cart-amount">
+              <button>-</button>
+              <span>{{ quantity }}</span>
+              <button>+</button>
+            </div>
+            <button class="btn btn-1">ADD TO CART</button>
+          </div>
+        </section>
+      </div>
+      <div id="row-2">
+        <section id="features">
+          <h2 class="secondary-heading">FEATURES</h2>
+          <p id="features-p">{{ selectedProduct.features }}</p>
+        </section>
+        <section id="in-the-box">
+          <h2 class="secondary-heading">in the box</h2>
+          <ul>
+            <li v-for="item in selectedProduct.includes">
+              <span class="quantity">{{ item.quantity }}x</span>
+              <span class="item">{{ item.item }}</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <section id="gallery">
+        <picture>
+          <source
+            media="(min-width: 90rem)"
+            v-bind:srcset="selectedProduct.gallery?.first.desktop"
+          />
+          <source
+            media="(min-width: 48rem)"
+            v-bind:srcset="selectedProduct.gallery?.first.tablet"
+          />
+          <img
+            alt="Product"
+            class="product-image"
+            v-bind:src="selectedProduct.gallery?.first.mobile"
+          />
+        </picture>
+        <picture>
+          <source
+            media="(min-width: 90rem)"
+            v-bind:srcset="selectedProduct.gallery?.second.desktop"
+          />
+          <source
+            media="(min-width: 48rem)"
+            v-bind:srcset="selectedProduct.gallery?.second.tablet"
+          />
+          <img
+            alt="Product"
+            class="product-image"
+            v-bind:src="selectedProduct.gallery?.second.mobile"
+          />
+        </picture>
+        <picture>
+          <source
+            media="(min-width: 90rem)"
+            v-bind:srcset="selectedProduct.gallery?.third.desktop"
+          />
+          <source
+            media="(min-width: 48rem)"
+            v-bind:srcset="selectedProduct.gallery?.third.tablet"
+          />
+          <img
+            alt="Product"
+            class="product-image"
+            v-bind:src="selectedProduct.gallery?.third.mobile"
+          />
+        </picture>
+      </section>
+      <article id="others">
+        <h2 class="secondary-heading" id="you-may-also">you may also like</h2>
+        <ul>
+          <li v-for="other in selectedProduct.others">
+            <picture>
+              <source
+                media="(min-width: 90rem)"
+                v-bind:srcset="other.image.desktop"
+              />
+              <source
+                media="(min-width: 48rem)"
+                v-bind:srcset="other.image.tablet"
+              />
+              <img
+                alt="Product"
+                class="product-image"
+                v-bind:src="other.image.mobile"
+              />
+            </picture>
+            <span class="other-name">{{ other.name }}</span>
+            <a class="btn btn-1" v-bind:href="otherPageLink(other)"
+              >See Product</a
+            >
+          </li>
+        </ul>
+      </article>
+      <section>
+        <nav>
+          <ul id="categories-thumbnails-nav">
+            <li v-for="category in categories">
+              <a
+                class="category-in-nav"
+                v-bind:href="categoryPageLink(category)"
+              >
+                <img
+                  alt="Category Thumbnail"
+                  class="category-thumbnail"
+                  v-bind:src="categoryThumbnailImage(category)"
+                />
+                <span class="category">{{ category }}</span>
+                <div class="shop-link">
+                  <span class="shop">Shop</span>
+                  <img
+                    alt="Right Arrow"
+                    src="/assets/shared/desktop/icon-arrow-right.svg"
+                  />
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section id="best">
+        <article>
+          <div id="best-gear">
+            <h2>
+              Bringing you the
+              <span id="best-word">best</span>
+              audio gear
+            </h2>
+            <p>
+              Located at the heart of New York City, Audiophile is the premier
+              store for high end headphones, earphones, speakers, and audio
+              accessories. We have a large showroom and luxury demonstration
+              rooms available for you to browse and experience a wide range of
+              our products. Stop by our store to meet some of the fantastic
+              people who make Audiophile the best place to buy your portable
+              audio equipment.
+            </p>
+          </div>
+          <picture>
+            <source
+              media="(min-width: 90rem)"
+              srcset="/assets/shared/desktop/image-best-gear.jpg"
+            />
+            <source
+              media="(min-width: 48rem)"
+              srcset="/assets/shared/tablet/image-best-gear.jpg"
+            />
+            <img
+              alt="Best Gear"
+              src="/assets/shared/mobile/image-best-gear.jpg"
+            />
+          </picture>
+        </article>
+      </section>
+      <footer>
+        <img alt="Logo" id="footer-logo" src="assets/shared/desktop/logo.svg" />
+        <nav>
+          <ul class="categories-nav">
+            <li>
+              <a href="/index.html">Home</a>
+            </li>
+            <li v-for="category in categories">
+              <a v-bind:href="categoryPageLink(category)">{{ category }}</a>
+            </li>
+          </ul>
+        </nav>
+        <div id="footer-text">
+          <p id="we-are-open">
+            Audiophile is an all in one stop to fulfill your audio needs. We're
+            a small team of music lovers and sound specialists who are devoted
+            to helping you get the most out of personal audio. Come and visit
+            our demo facility - we’re open 6 days a week.
+          </p>
+          <p id="copyright">Copyright 2021. All Rights Reserved</p>
+        </div>
+        <ul id="social">
+          <li>
+            <a class="inline-svg" v-html="svgIcons.facebook"></a>
+          </li>
+          <li>
+            <a class="inline-svg" v-html="svgIcons.twitter"></a>
+          </li>
+          <li>
+            <a class="inline-svg" v-html="svgIcons.instagram"></a>
+          </li>
+        </ul>
+      </footer>
+    </main>
+  </body>
+</html>

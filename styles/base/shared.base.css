@@ -41,6 +41,11 @@ a {
 }
 
 button {
+  border: none;
+  cursor: pointer;
+}
+
+#burger-icon-button {
   display: contents;
 }
 
@@ -146,9 +151,12 @@ img {
   display: flex;
 }
 
+h2 {
+  text-transform: uppercase;
+}
+
 #best h2 {
   margin-bottom: 2rem;
-  text-transform: uppercase;
 }
 
 #best-word {
@@ -158,6 +166,7 @@ img {
 #best p {
   font-size: 0.94rem;
   line-height: 166.67%;
+  opacity: 0.5;
 }
 
 footer {

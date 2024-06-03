@@ -24,7 +24,7 @@
   <body>
     <div id="top">
       <header>
-        <button>
+        <button id="burger-icon-button">
           <img
             alt="Burger Icon"
             src="assets/shared/tablet/icon-hamburger.svg"
@@ -69,7 +69,9 @@
                 <p id="new-product" v-if="product.new">NEW PRODUCT</p>
                 <h2 class="product-name">{{ product.name }}</h2>
                 <p class="product-description">{{ product.description }}</p>
-                <a class="btn btn-1" href="">See Product</a>
+                <a class="btn btn-1" v-bind:href="productPageLink(product)"
+                  >See Product</a
+                >
               </div>
             </div>
           </li>

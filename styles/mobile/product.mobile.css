@@ -1,0 +1,64 @@
+#top {
+  margin-bottom: 1rem;
+}
+
+#go-back {
+  margin-bottom: 1.5rem;
+}
+
+#main-product-image {
+  margin-bottom: 2rem;
+}
+
+#product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#cart-management {
+  margin-top: 0.44rem;
+}
+
+#row-1,
+#row-2,
+#features {
+  margin-bottom: 5.5rem;
+}
+
+.secondary-heading {
+  letter-spacing: 0.05rem;
+  line-height: 150%;
+}
+
+#row-2 h2 {
+  margin-bottom: 1.5rem;
+}
+
+#gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 7.5rem;
+}
+
+#others {
+  margin-bottom: 10.75rem;
+}
+
+#others h2 {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+#others ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  text-align: center;
+}
+
+.other-name {
+  display: block;
+  margin-top: 2rem;
+}
