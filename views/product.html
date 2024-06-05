@@ -69,14 +69,14 @@
           <h1 class="product-name">{{ selectedProduct.name }}</h1>
           <p class="product-description">{{ selectedProduct.description }}</p>
           <p id="price">$ {{ price }}</p>
-          <div id="cart-management">
+          <form id="cart-management" @submit="addToCart">
             <div id="cart-amount">
-              <button @click="decreaseQuantity">-</button>
+              <button type="button" @click="decreaseQuantity">-</button>
               <span>{{ quantity }}</span>
-              <button @click="increaseQuantity">+</button>
+              <button type="button" @click="increaseQuantity">+</button>
             </div>
-            <button class="btn btn-1" @click="addToCart">ADD TO CART</button>
-          </div>
+            <button class="btn btn-1">ADD TO CART</button>
+          </form>
         </section>
       </div>
       <div id="row-2">
@@ -227,6 +227,9 @@
           </picture>
         </article>
       </section>
+      <dialog>
+        <h2>cart</h2>
+      </dialog>
     </main>
     <footer>
       <img alt="Logo" id="footer-logo" src="assets/shared/desktop/logo.svg" />

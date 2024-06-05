@@ -27,7 +27,9 @@ const ProductApp = {
     };
   },
   methods: {
-    addToCart() {
+    addToCart(event) {
+      event.preventDefault();
+
       const cartData = localStorage.getItem(`cart`);
       const cart = cartData ? JSON.parse(cartData) : {};
       const slug = this.selectedProduct.slug;
