@@ -28,12 +28,8 @@ const CategoryApp = {
     };
   },
   methods: {
-    categoryPageLink(category) {
-      return `/views/category.html?category=${category}`;
-    },
-    categoryThumbnailImage(category) {
-      return `/assets/shared/desktop/image-category-thumbnail-${category}.png`;
-    },
+    categoryPageLink,
+    categoryThumbnailImage,
     productPageLink(product) {
       return `/views/product.html?product=${product.slug}`;
     },

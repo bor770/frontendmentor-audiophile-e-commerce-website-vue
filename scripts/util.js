@@ -21,3 +21,9 @@ const init = async () => {
     svgIcons,
   };
 };
+
+const categoryPageLink = (category) =>
+  `/views/category.html?category=${category}`;
+
+const categoryThumbnailImage = (category) =>
+  `/assets/shared/desktop/image-category-thumbnail-${category}.png`;

@@ -8,14 +8,7 @@ const IndexApp = {
   data() {
     return { categories: [], svgIcons: {} };
   },
-  methods: {
-    categoryPageLink(category) {
-      return `/views/category.html?category=${category}`;
-    },
-    categoryThumbnailImage(category) {
-      return `/assets/shared/desktop/image-category-thumbnail-${category}.png`;
-    },
-  },
+  methods: { categoryPageLink, categoryThumbnailImage },
 };
 
 Vue.createApp(IndexApp).mount(`body`);
