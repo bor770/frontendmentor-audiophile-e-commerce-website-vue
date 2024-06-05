@@ -14,7 +14,7 @@ const ProductApp = {
     this.selectedProduct = productData.find(
       (product) => product.slug === selectedProduct
     );
-    console.log(this.selectedProduct);
+
     this.price = this.selectedProduct.price.toLocaleString();
   },
   data() {
@@ -27,11 +27,26 @@ const ProductApp = {
     };
   },
   methods: {
+    addToCart() {
+      const cartData = localStorage.getItem(`cart`);
+      const cart = cartData ? JSON.parse(cartData) : {};
+      const slug = this.selectedProduct.slug;
+
+      cart[slug] = (cart[slug] || 0) + this.quantity;
+
+      localStorage.setItem(`cart`, JSON.stringify(cart));
+    },
+    decreaseQuantity() {
+      this.quantity = --this.quantity || 1;
+    },
     categoryPageLink(category) {
       return `/views/category.html?category=${category}`;
     },
     categoryThumbnailImage(category) {
       return `/assets/shared/desktop/image-category-thumbnail-${category}.png`;
+    },
+    increaseQuantity() {
+      this.quantity++;
     },
     otherPageLink(product) {
       return `/views/product.html?product=${product.slug}`;

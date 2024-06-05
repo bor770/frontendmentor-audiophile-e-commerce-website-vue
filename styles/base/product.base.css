@@ -37,10 +37,10 @@
   opacity: 0.25;
 }
 
-#cart-amount button:hover {
+/* #cart-amount button:hover {
   color: #d87d4a;
   opacity: initial;
-}
+} */
 
 #features-p {
   font-size: 0.94rem;

@@ -71,11 +71,11 @@
           <p id="price">$ {{ price }}</p>
           <div id="cart-management">
             <div id="cart-amount">
-              <button>-</button>
+              <button @click="decreaseQuantity">-</button>
               <span>{{ quantity }}</span>
-              <button>+</button>
+              <button @click="increaseQuantity">+</button>
             </div>
-            <button class="btn btn-1">ADD TO CART</button>
+            <button class="btn btn-1" @click="addToCart">ADD TO CART</button>
           </div>
         </section>
       </div>
@@ -227,39 +227,39 @@
           </picture>
         </article>
       </section>
-      <footer>
-        <img alt="Logo" id="footer-logo" src="assets/shared/desktop/logo.svg" />
-        <nav>
-          <ul class="categories-nav">
-            <li>
-              <a href="/index.html">Home</a>
-            </li>
-            <li v-for="category in categories">
-              <a v-bind:href="categoryPageLink(category)">{{ category }}</a>
-            </li>
-          </ul>
-        </nav>
-        <div id="footer-text">
-          <p id="we-are-open">
-            Audiophile is an all in one stop to fulfill your audio needs. We're
-            a small team of music lovers and sound specialists who are devoted
-            to helping you get the most out of personal audio. Come and visit
-            our demo facility - we’re open 6 days a week.
-          </p>
-          <p id="copyright">Copyright 2021. All Rights Reserved</p>
-        </div>
-        <ul id="social">
+    </main>
+    <footer>
+      <img alt="Logo" id="footer-logo" src="assets/shared/desktop/logo.svg" />
+      <nav>
+        <ul class="categories-nav">
           <li>
-            <a class="inline-svg" v-html="svgIcons.facebook"></a>
+            <a href="/index.html">Home</a>
           </li>
-          <li>
-            <a class="inline-svg" v-html="svgIcons.twitter"></a>
-          </li>
-          <li>
-            <a class="inline-svg" v-html="svgIcons.instagram"></a>
+          <li v-for="category in categories">
+            <a v-bind:href="categoryPageLink(category)">{{ category }}</a>
           </li>
         </ul>
-      </footer>
-    </main>
+      </nav>
+      <div id="footer-text">
+        <p id="we-are-open">
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 6 days a week.
+        </p>
+        <p id="copyright">Copyright 2021. All Rights Reserved</p>
+      </div>
+      <ul id="social">
+        <li>
+          <a class="inline-svg" v-html="svgIcons.facebook"></a>
+        </li>
+        <li>
+          <a class="inline-svg" v-html="svgIcons.twitter"></a>
+        </li>
+        <li>
+          <a class="inline-svg" v-html="svgIcons.instagram"></a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
