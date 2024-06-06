@@ -46,9 +46,7 @@ const ProductApp = {
     increaseQuantity() {
       this.quantity++;
     },
-    otherPageLink(product) {
-      return `/views/product.html?product=${product.slug}`;
-    },
+    otherPageLink,
   },
 };
 

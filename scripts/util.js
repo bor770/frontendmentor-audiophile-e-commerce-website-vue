@@ -27,3 +27,9 @@ const categoryPageLink = (category) =>
 
 const categoryThumbnailImage = (category) =>
   `/assets/shared/desktop/image-category-thumbnail-${category}.png`;
+
+const otherPageLink = (product) =>
+  `/views/product.html?product=${product.slug}`;
+
+const productPageLink = (product) =>
+  `/views/product.html?product=${product.slug}`;

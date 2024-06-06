@@ -27,13 +27,7 @@ const CategoryApp = {
       svgIcons: {},
     };
   },
-  methods: {
-    categoryPageLink,
-    categoryThumbnailImage,
-    productPageLink(product) {
-      return `/views/product.html?product=${product.slug}`;
-    },
-  },
+  methods: { categoryPageLink, categoryThumbnailImage, productPageLink },
 };
 
 Vue.createApp(CategoryApp).mount(`body`);

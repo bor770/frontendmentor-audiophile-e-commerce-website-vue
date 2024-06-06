@@ -41,12 +41,10 @@ a {
 }
 
 button {
+  background-color: transparent;
   border: none;
   cursor: pointer;
-}
-
-#burger-icon-button {
-  display: contents;
+  outline: none;
 }
 
 svg {
